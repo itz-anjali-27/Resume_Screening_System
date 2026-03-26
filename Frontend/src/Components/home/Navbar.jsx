@@ -85,11 +85,11 @@ export default function Navbar() {
               <div className="absolute right-0 top-full mt-2 w-44 bg-[#111827] border border-[#4f8ef7]/15 rounded-xl shadow-2xl overflow-hidden">
                 <button onClick={() => { navigate('/register'); setLoginOpen(false); }}
                   className="block w-full text-left px-5 py-3 text-sm text-slate-300 hover:bg-[#4f8ef7]/10 hover:text-white">
-                  User
+                  Applicant
                 </button>
                 <button onClick={() => { navigate('/register'); setLoginOpen(false); }}
                   className="block w-full text-left px-5 py-3 text-sm text-slate-300 hover:bg-[#4f8ef7]/10 hover:text-white">
-                  HR
+                  Recruiter
                 </button>
               </div>
             )}
