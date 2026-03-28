@@ -11,12 +11,11 @@ export default function Form({ isLogin, onLoginSuccess, role, setIsLogin }) {
   e.preventDefault();
 
   if (isLogin) {
-    onLoginSuccess(); // ✅ login success
-  } else {
-    alert("Registration Successful ✅");
-
-    onLoginSuccess(); // ✅ register success → redirect
-  }
+  onLoginSuccess(role);
+} else {
+  alert("Registration Successful ✅");
+  onLoginSuccess(role);
+}
 };
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -66,7 +65,7 @@ export default function Form({ isLogin, onLoginSuccess, role, setIsLogin }) {
         />
       )}
 
-      <button className="w-full bg-blue-600 py-3 rounded text-white font-semibold">
+      <button   type="submit" className="w-full bg-blue-600 py-3 rounded text-white font-semibold">
         {isLogin ? "Login" : "Register"}
       </button>
 

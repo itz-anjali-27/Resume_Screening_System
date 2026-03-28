@@ -1,9 +1,12 @@
 import React from 'react';
 import HeroSection from '../Components/home/HeroSection';  
-import StatsSection from '../Components/home/StatsSection';
 import FeaturesSection from '../Components/home/FeaturesSection';
 import Navbar from '../Components/home/Navbar';
+import Footer from '../Components/home/Footer';
 import { useState } from 'react';
+
+
+
 export default function HomePage({ setPage }) {
   const [page, setLocalPage] = useState('home');
 
@@ -24,8 +27,8 @@ export default function HomePage({ setPage }) {
         </div>
 
         <HeroSection setPage={setLocalPage} />
-        <StatsSection />
         <FeaturesSection />
+         <Footer />
 
       </div>
     </div>

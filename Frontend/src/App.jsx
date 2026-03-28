@@ -4,6 +4,9 @@ import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import Registration from "./pages/Registration";
 import UserHome from "./pages/User/UserHome";
+import Application from "./pages/User/Application"
+import ProfilePage from "./pages/User/ProfilePage";
+import SignOut from "./pages/User/SignOut";
 
 function App() {
   return (
@@ -13,7 +16,12 @@ function App() {
         <Route path="/contact" element={<ContactPage /> } />
         <Route path="/about" element={<AboutPage /> } />
         <Route path="/register" element={<Registration /> } />
-        <Route path="/UserHome" element={<UserHome />} />
+        <Route path="/home" element={<UserHome />} />
+        <Route path="/userHome" element={<UserHome />} />
+        <Route path="/application/:id" element={<Application />} />
+        <Route path="/apply" element={<Application />} />
+        <Route path="/profile" element={<ProfilePage />} /> 
+        <Route path="/signout" element={<SignOut />} />
       </Routes>
     </BrowserRouter>
   );

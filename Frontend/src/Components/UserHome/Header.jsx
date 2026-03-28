@@ -1,8 +1,8 @@
 export default function Header({ search, setSearch }) {
   return (
     <div className="mb-6">
-      <h1 className="text-2xl text-white font-bold">
-        Find Your Next Role
+      <h1 className="text-3xl text-white font-bold pt-20">
+        Find Your Dream Job
       </h1>
 
       <input

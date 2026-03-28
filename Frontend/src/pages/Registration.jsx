@@ -1,20 +1,31 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import RoleToggle from "../Components/Register/RoleToggle";
 import Form from "../Components/Register/Form";
 import SwitchAuth from "../Components/Register/SwitchAuth";
 import Navbar from "../Components/home/Navbar"; // ✅ add
 
 export default function Registration({ defaultTab }) {
-  const [role, setRole] = useState("user");
+  const location = useLocation();
+
+const [role, setRole] = useState(
+  location.state?.role || "applicant"
+);
   const [isLogin, setIsLogin] = useState(defaultTab === "login");
 
   const navigate = useNavigate();
 
-  const handleAuthSuccess = () => {
-    localStorage.setItem("token", "loggedIn");
-    navigate("/home");
-  };
+  const handleAuthSuccess = (role) => {
+  localStorage.setItem("token", "loggedIn");
+  localStorage.setItem("role", role);
+
+   if (role === "applicant") {
+    navigate("/Userhome");
+  } else if (role === "recruiter") {
+    navigate("/HRhome");
+  }
+};
 
   return (
     <div className="min-h-screen bg-[#0f172a]">
