@@ -4,11 +4,10 @@ export default function JobCard({ job, applied, handleApply }) {
   const navigate = useNavigate();
   const isApplied = applied.includes(job.id);
 
-  const handleClick = () => {
-    handleApply(job.id);
-    navigate(`/application/${job.id}`); // 👉 redirect
-  };
-
+const handleClick = () => {
+  handleApply(job.id); 
+  navigate("/apply");  
+};
   return (
     <div className="bg-[#111827] p-5 mb-4 rounded-2xl text-white shadow-md">
       

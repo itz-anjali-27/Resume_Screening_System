@@ -7,6 +7,8 @@ import UserHome from "./pages/User/UserHome";
 import Application from "./pages/User/Application"
 import ProfilePage from "./pages/User/ProfilePage";
 import SignOut from "./pages/User/SignOut";
+import HrDashboard from "./pages/HR/HrDashboard";
+import LogOut from "./pages/HR/LogOut";
 
 function App() {
   return (
@@ -18,10 +20,12 @@ function App() {
         <Route path="/register" element={<Registration /> } />
         <Route path="/home" element={<UserHome />} />
         <Route path="/userHome" element={<UserHome />} />
-        <Route path="/application/:id" element={<Application />} />
         <Route path="/apply" element={<Application />} />
         <Route path="/profile" element={<ProfilePage />} /> 
         <Route path="/signout" element={<SignOut />} />
+        <Route path="/HRhome" element={<HrDashboard />} />
+        <Route path="/dashboard" element={<HrDashboard />} />
+        <Route path="/logout" element={<LogOut />} />
       </Routes>
     </BrowserRouter>
   );

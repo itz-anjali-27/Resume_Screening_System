@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
-export default function HeroSection({ setPage }) {
+export default function HeroSection() {
+  const navigate = useNavigate();
+
   return (
     <div className="relative overflow-hidden bg-linear-to-br from-[#111827] to-[#0d1421] border border-[#4f8ef7]/15 rounded-2xl p-10 sm:p-14 lg:p-20 text-center mb-8">
       <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#3b5fc0]/10 rounded-full blur-3xl" />
@@ -16,19 +19,23 @@ export default function HeroSection({ setPage }) {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4">
+          
+          {/* Upload Resume */}
           <button
-            onClick={() => setPage?.('login')}
+            onClick={() => navigate("/login")}
             className="px-8 py-3.5 border-2 border-[#4f8ef7]/50 text-white rounded-xl hover:border-[#4f8ef7] hover:bg-[#4f8ef7]/10"
           >
             Upload Resume
           </button>
 
+          {/* Get Started */}
           <button
-            onClick={() => setPage?.('register')}
-            className="px-8 py-3.5 bg-linaer-to-r from-[#3b5fc0] to-[#7c4ddb] text-white rounded-xl"
+            onClick={() => navigate("/register")}
+            className="px-8 py-3.5 bg-linear-to-r from-[#3b5fc0] to-[#7c4ddb] text-white rounded-xl"
           >
             Get Started
           </button>
+
         </div>
       </div>
     </div>
